@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using Algorithms_Desktop_App.BL;
 using Algorithms_Desktop_App.DL;
@@ -19,6 +21,7 @@ namespace Algorithms_Desktop_App
         List<string> sortType = new List<string>() { "Selection Sort ", "Bubble Sort ", "Insertion Sort ", "Merge Sort ", "Quick Sort", "Heap Sort", "Counting Sort", "Radix Sort", "Bucket Sort" };
         List<string> sortBy = new List<string>() { "by Index", "by No of Employees" };
 
+        bool working = false;
         private void mainForm_Load(object sender, EventArgs e)
         {
             cmBoxLoadFiles.DataSource = filenames;
@@ -33,8 +36,6 @@ namespace Algorithms_Desktop_App
             organizations.set_Data(OrganizationDl.load_data(filenames[0]));
             dataBind(organizations.get_Data());
         }
-
-
         public void dataBind(List<Org> list)
         {
             GridGV.DataSource = null;
@@ -56,26 +57,77 @@ namespace Algorithms_Desktop_App
 
         private void kryptonButton4_Click(object sender, EventArgs e)
         {
-            /*PictureBox pb =new PictureBox();
-            pb.Image = Algorithms_Desktop_App.Properties.Resources.loading;
-            pb.Width = 200;
-            pb.Height = 200;
-            pb.Top = this.Height/2;
-            pb.Left = this.Width/2;
-            pb.Show();
-            this.Controls.Add(pb);*/
-            var watch = new System.Diagnostics.Stopwatch();
-            watch.Start();
-            organizations.set_Data(organizations.sortData(cmBoxSorttype.SelectedIndex, cmBoxsortBy.SelectedIndex, organizations.get_Data()));
-            dataBind(organizations.get_Data());
-            watch.Stop();
-            showTime(watch.ElapsedMilliseconds);
+            if (!working)
+            {
+                ThreadStart s = new ThreadStart(sortDataThread);
+                Thread thread1 = new Thread(s);
+                thread1.Start();
+                working = true;
+            }
         }
-
+        private void sortDataThread()
+        {
+            try
+            {
+                var watch = new System.Diagnostics.Stopwatch();
+                watch.Start();
+                organizations.set_Data(organizations.sortData(cmBoxSorttype.SelectedIndex, cmBoxsortBy.SelectedIndex, organizations.get_Data()));
+                dataBind(organizations.get_Data());
+                watch.Stop();
+                showTime(watch.ElapsedMilliseconds);
+                working = false;
+            }
+            catch(IndexOutOfRangeException e)
+            {
+                MessageBox.Show("The Data you Given for Sorting Purpose is invalid.");
+            }
+            catch(FileNotFoundException e)
+            {
+                MessageBox.Show("The file you are trying to read Data from is not found.");
+            }
+            catch(OutOfMemoryException e)
+            {
+                MessageBox.Show("Memory Limit reached.");
+            }
+            catch(TimeoutException e)
+            {
+                MessageBox.Show("Time Limit Reached.");
+            }
+        }
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
-            organizations.set_Data(OrganizationDl.load_data(filenames[cmBoxLoadFiles.SelectedIndex]));
-            dataBind(organizations.get_Data());
+            if (!working)
+            {
+                ThreadStart thread = new ThreadStart(loadDataThread);
+                Thread thread1 = new Thread(thread);
+                thread1.Start();
+                working = true;
+            }
+        }
+        private void loadDataThread()
+        {
+            try
+            {
+                organizations.set_Data(OrganizationDl.load_data(filenames[cmBoxLoadFiles.SelectedIndex]));
+                dataBind(organizations.get_Data());
+                working = false;
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                MessageBox.Show("The Data you Given for Sorting Purpose is invalid.");
+            }
+            catch (FileNotFoundException e)
+            {
+                MessageBox.Show("The file you are trying to read Data from is not found.");
+            }
+            catch (OutOfMemoryException e)
+            {
+                MessageBox.Show("Memory Limit reached.");
+            }
+            catch (TimeoutException e)
+            {
+                MessageBox.Show("Time Limit Reached.");
+            }
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
