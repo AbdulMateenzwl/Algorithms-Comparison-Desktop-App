@@ -29,13 +29,12 @@ namespace Algorithms_Desktop_App
             cmBoxSorttype.DataSource = sortType;
             cmBoxsortBy.DataSource = sortBy;
 
+            loadDataThread();
             dataBind(organizations.get_Data());
         }
         public mainForm()
         {
             InitializeComponent();
-            organizations.set_Data(OrganizationDl.load_data(filenames[0]));
-            dataBind(organizations.get_Data());
         }
         public void dataBind(List<Org> list)
         {
@@ -58,13 +57,12 @@ namespace Algorithms_Desktop_App
 
         private void kryptonButton4_Click(object sender, EventArgs e)
         {
-            if (!working)
-            {
-                ThreadStart s = new ThreadStart(sortDataThread);
-                Thread thread1 = new Thread(s);
-                thread1.Start();
-                working = true;
-            }
+            ThreadStart s = new ThreadStart(sortDataThread);
+            Thread thread1 = new Thread(s);
+            thread1.Start();
+            thread1.Abort();
+
+
         }
         private void sortDataThread()
         {
@@ -78,40 +76,39 @@ namespace Algorithms_Desktop_App
                 showTime(watch.ElapsedMilliseconds);
                 working = false;
             }
-            catch(IndexOutOfRangeException)
+            catch (IndexOutOfRangeException)
             {
                 MessageBox.Show("The Data you Given for Sorting Purpose is invalid.");
             }
-            catch(FileNotFoundException)
+            catch (FileNotFoundException)
             {
                 MessageBox.Show("The file you are trying to read Data from is not found.");
             }
-            catch(OutOfMemoryException)
+            catch (OutOfMemoryException)
             {
                 MessageBox.Show("Memory Limit reached.");
             }
-            catch(TimeoutException)
+            catch (TimeoutException)
             {
                 MessageBox.Show("Time Limit Reached.");
             }
         }
         private void kryptonButton2_Click(object sender, EventArgs e)
         {
-            if (!working)
-            {
-                ThreadStart thread = new ThreadStart(loadDataThread);
-                Thread thread1 = new Thread(thread);
-                thread1.Start();
-                working = true;
-            }
+            ThreadStart s = new ThreadStart(loadDataThread);
+            Thread thread1 = new Thread(s);
+            thread1.Start();
         }
         private void loadDataThread()
         {
             try
             {
-                organizations.set_Data(OrganizationDl.load_data(filenames[cmBoxLoadFiles.SelectedIndex]));
-                dataBind(organizations.get_Data());
-                working = false;
+                if (!working)
+                {
+                    organizations.set_Data(OrganizationDl.load_data(filenames[cmBoxLoadFiles.SelectedIndex]));
+                    dataBind(organizations.get_Data());
+                    working = false;
+                }
             }
             catch (IndexOutOfRangeException)
             {

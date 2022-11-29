@@ -390,13 +390,13 @@ namespace Algorithms_Desktop_App.BL
             int pivot = arr[start].index;
             int i = start + 1;
             int j = end;
-            do
+            while (i < j)
             {
-                while (pivot >= arr[i].index)
+                while (i<=end && pivot >= arr[i].index)
                 {
                     i++;
                 }
-                while (pivot < arr[j].index)
+                while (j>=start && pivot < arr[j].index)
                 {
                     j--;
                 }
@@ -406,9 +406,9 @@ namespace Algorithms_Desktop_App.BL
                     arr[i] = arr[j];
                     arr[j] = orgit;
                 }
-            } while (i < j);
-            Org gt = arr[i];
-            arr[i] = arr[j];
+            }
+            Org gt = arr[start];
+            arr[start] = arr[j];
             arr[j] = gt;
             return j;
         }
