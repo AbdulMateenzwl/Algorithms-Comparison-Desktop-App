@@ -22,6 +22,7 @@ namespace Algorithms_Desktop_App
         List<string> sortBy = new List<string>() { "by Index", "by No of Employees" };
 
         bool working = false;
+
         private void mainForm_Load(object sender, EventArgs e)
         {
             cmBoxLoadFiles.DataSource = filenames;
@@ -77,19 +78,19 @@ namespace Algorithms_Desktop_App
                 showTime(watch.ElapsedMilliseconds);
                 working = false;
             }
-            catch(IndexOutOfRangeException e)
+            catch(IndexOutOfRangeException)
             {
                 MessageBox.Show("The Data you Given for Sorting Purpose is invalid.");
             }
-            catch(FileNotFoundException e)
+            catch(FileNotFoundException)
             {
                 MessageBox.Show("The file you are trying to read Data from is not found.");
             }
-            catch(OutOfMemoryException e)
+            catch(OutOfMemoryException)
             {
                 MessageBox.Show("Memory Limit reached.");
             }
-            catch(TimeoutException e)
+            catch(TimeoutException)
             {
                 MessageBox.Show("Time Limit Reached.");
             }
@@ -112,25 +113,35 @@ namespace Algorithms_Desktop_App
                 dataBind(organizations.get_Data());
                 working = false;
             }
-            catch (IndexOutOfRangeException e)
+            catch (IndexOutOfRangeException)
             {
                 MessageBox.Show("The Data you Given for Sorting Purpose is invalid.");
             }
-            catch (FileNotFoundException e)
+            catch (FileNotFoundException)
             {
                 MessageBox.Show("The file you are trying to read Data from is not found.");
             }
-            catch (OutOfMemoryException e)
+            catch (OutOfMemoryException)
             {
                 MessageBox.Show("Memory Limit reached.");
             }
-            catch (TimeoutException e)
+            catch (TimeoutException)
             {
                 MessageBox.Show("Time Limit Reached.");
             }
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void GridGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void cmBoxSorttype_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

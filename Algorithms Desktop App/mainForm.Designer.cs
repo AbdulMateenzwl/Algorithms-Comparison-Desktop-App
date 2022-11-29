@@ -30,16 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.kryptonButton4 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.kryptonButton3 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
-            this.cmBoxSorttype = new System.Windows.Forms.ComboBox();
-            this.cmBoxsortBy = new System.Windows.Forms.ComboBox();
-            this.cmBoxLoadFiles = new System.Windows.Forms.ComboBox();
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.cmBoxLoadFiles = new Guna.UI2.WinForms.Guna2ComboBox();
             this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
+            this.cmBoxSorttype = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cmBoxsortBy = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.GridGV = new System.Windows.Forms.DataGridView();
+            this.GridGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridGV)).BeginInit();
@@ -48,7 +51,7 @@
             // kryptonButton4
             // 
             this.kryptonButton4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonButton4.Location = new System.Drawing.Point(689, 3);
+            this.kryptonButton4.Location = new System.Drawing.Point(731, 3);
             this.kryptonButton4.Name = "kryptonButton4";
             this.kryptonButton4.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton4.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -63,7 +66,7 @@
             this.kryptonButton4.OverrideDefault.Border.Rounding = 20;
             this.kryptonButton4.OverrideDefault.Border.Width = 1;
             this.kryptonButton4.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonButton4.Size = new System.Drawing.Size(94, 32);
+            this.kryptonButton4.Size = new System.Drawing.Size(101, 32);
             this.kryptonButton4.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton4.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
             this.kryptonButton4.StateCommon.Back.ColorAngle = 45F;
@@ -110,7 +113,7 @@
             // kryptonButton3
             // 
             this.kryptonButton3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonButton3.Location = new System.Drawing.Point(584, 3);
+            this.kryptonButton3.Location = new System.Drawing.Point(620, 3);
             this.kryptonButton3.Name = "kryptonButton3";
             this.kryptonButton3.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton3.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -125,7 +128,7 @@
             this.kryptonButton3.OverrideDefault.Border.Rounding = 20;
             this.kryptonButton3.OverrideDefault.Border.Width = 1;
             this.kryptonButton3.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kryptonButton3.Size = new System.Drawing.Size(99, 32);
+            this.kryptonButton3.Size = new System.Drawing.Size(105, 32);
             this.kryptonButton3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton3.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
             this.kryptonButton3.StateCommon.Back.ColorAngle = 45F;
@@ -169,52 +172,9 @@
             this.kryptonButton3.Values.Text = "Store Data";
             this.kryptonButton3.Click += new System.EventHandler(this.kryptonButton3_Click_1);
             // 
-            // cmBoxSorttype
-            // 
-            this.cmBoxSorttype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cmBoxSorttype.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmBoxSorttype.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cmBoxSorttype.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmBoxSorttype.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmBoxSorttype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmBoxSorttype.FormattingEnabled = true;
-            this.cmBoxSorttype.Location = new System.Drawing.Point(237, 3);
-            this.cmBoxSorttype.Name = "cmBoxSorttype";
-            this.cmBoxSorttype.Size = new System.Drawing.Size(101, 21);
-            this.cmBoxSorttype.TabIndex = 8;
-            // 
-            // cmBoxsortBy
-            // 
-            this.cmBoxsortBy.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cmBoxsortBy.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmBoxsortBy.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cmBoxsortBy.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmBoxsortBy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmBoxsortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmBoxsortBy.FormattingEnabled = true;
-            this.cmBoxsortBy.Location = new System.Drawing.Point(344, 3);
-            this.cmBoxsortBy.Name = "cmBoxsortBy";
-            this.cmBoxsortBy.Size = new System.Drawing.Size(111, 21);
-            this.cmBoxsortBy.TabIndex = 5;
-            // 
-            // cmBoxLoadFiles
-            // 
-            this.cmBoxLoadFiles.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
-            this.cmBoxLoadFiles.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmBoxLoadFiles.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.cmBoxLoadFiles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cmBoxLoadFiles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmBoxLoadFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmBoxLoadFiles.FormattingEnabled = true;
-            this.cmBoxLoadFiles.Location = new System.Drawing.Point(3, 3);
-            this.cmBoxLoadFiles.Name = "cmBoxLoadFiles";
-            this.cmBoxLoadFiles.Size = new System.Drawing.Size(134, 21);
-            this.cmBoxLoadFiles.TabIndex = 2;
-            // 
             // kryptonButton2
             // 
-            this.kryptonButton2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.kryptonButton2.Location = new System.Drawing.Point(143, 3);
+            this.kryptonButton2.Location = new System.Drawing.Point(152, 3);
             this.kryptonButton2.Name = "kryptonButton2";
             this.kryptonButton2.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(174)))), ((int)(((byte)(244)))));
             this.kryptonButton2.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(8)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
@@ -278,26 +238,48 @@
             this.tableLayoutPanel1.ColumnCount = 8;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.8117F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.95929F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.61323F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.8855F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.997456F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 8.6514F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.68263F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.88623F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.508982F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 3.053435F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.35878F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.46819F));
-            this.tableLayoutPanel1.Controls.Add(this.kryptonButton2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmBoxLoadFiles, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmBoxsortBy, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.cmBoxSorttype, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.kryptonButton3, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.kryptonButton4, 7, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cmBoxLoadFiles, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.kryptonButton2, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cmBoxSorttype, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.cmBoxsortBy, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(786, 38);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(835, 38);
             this.tableLayoutPanel1.TabIndex = 6;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // cmBoxLoadFiles
+            // 
+            this.cmBoxLoadFiles.BackColor = System.Drawing.Color.Transparent;
+            this.cmBoxLoadFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.cmBoxLoadFiles.BorderRadius = 14;
+            this.cmBoxLoadFiles.BorderThickness = 2;
+            this.cmBoxLoadFiles.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmBoxLoadFiles.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmBoxLoadFiles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmBoxLoadFiles.DropDownWidth = 135;
+            this.cmBoxLoadFiles.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxLoadFiles.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxLoadFiles.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmBoxLoadFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmBoxLoadFiles.ItemHeight = 25;
+            this.cmBoxLoadFiles.ItemsAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmBoxLoadFiles.Location = new System.Drawing.Point(3, 3);
+            this.cmBoxLoadFiles.Name = "cmBoxLoadFiles";
+            this.cmBoxLoadFiles.ShadowDecoration.Shadow = new System.Windows.Forms.Padding(15);
+            this.cmBoxLoadFiles.Size = new System.Drawing.Size(143, 31);
+            this.cmBoxLoadFiles.TabIndex = 13;
             // 
             // kryptonPalette1
             // 
@@ -342,6 +324,46 @@
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
             // 
+            // cmBoxSorttype
+            // 
+            this.cmBoxSorttype.BackColor = System.Drawing.Color.Transparent;
+            this.cmBoxSorttype.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.cmBoxSorttype.BorderRadius = 14;
+            this.cmBoxSorttype.BorderThickness = 2;
+            this.cmBoxSorttype.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmBoxSorttype.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmBoxSorttype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmBoxSorttype.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxSorttype.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxSorttype.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmBoxSorttype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmBoxSorttype.ItemHeight = 25;
+            this.cmBoxSorttype.Location = new System.Drawing.Point(252, 3);
+            this.cmBoxSorttype.Name = "cmBoxSorttype";
+            this.cmBoxSorttype.Size = new System.Drawing.Size(150, 31);
+            this.cmBoxSorttype.TabIndex = 14;
+            this.cmBoxSorttype.SelectedIndexChanged += new System.EventHandler(this.cmBoxSorttype_SelectedIndexChanged);
+            // 
+            // cmBoxsortBy
+            // 
+            this.cmBoxsortBy.BackColor = System.Drawing.Color.Transparent;
+            this.cmBoxsortBy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.cmBoxsortBy.BorderRadius = 14;
+            this.cmBoxsortBy.BorderThickness = 2;
+            this.cmBoxsortBy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmBoxsortBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmBoxsortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmBoxsortBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxsortBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxsortBy.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmBoxsortBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmBoxsortBy.ItemHeight = 25;
+            this.cmBoxsortBy.ItemsAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmBoxsortBy.Location = new System.Drawing.Point(408, 3);
+            this.cmBoxsortBy.Name = "cmBoxsortBy";
+            this.cmBoxsortBy.Size = new System.Drawing.Size(135, 31);
+            this.cmBoxsortBy.TabIndex = 15;
+            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -352,29 +374,66 @@
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(786, 389);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(835, 403);
             this.tableLayoutPanel2.TabIndex = 9;
             // 
             // GridGV
             // 
-            this.GridGV.AllowUserToAddRows = false;
-            this.GridGV.AllowUserToDeleteRows = false;
-            this.GridGV.AllowUserToResizeColumns = false;
-            this.GridGV.AllowUserToResizeRows = false;
-            this.GridGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.GridGV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.GridGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.GridGV.ColumnHeadersHeight = 4;
+            this.GridGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.GridGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.GridGV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GridGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.GridGV.Location = new System.Drawing.Point(3, 3);
             this.GridGV.Name = "GridGV";
-            this.GridGV.ReadOnly = true;
-            this.GridGV.Size = new System.Drawing.Size(780, 383);
+            this.GridGV.RowHeadersVisible = false;
+            this.GridGV.Size = new System.Drawing.Size(829, 397);
             this.GridGV.TabIndex = 0;
+            this.GridGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.GridGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.GridGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.GridGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.GridGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.GridGV.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.GridGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.GridGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.GridGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.GridGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.GridGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.GridGV.ThemeStyle.HeaderStyle.Height = 4;
+            this.GridGV.ThemeStyle.ReadOnly = false;
+            this.GridGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.GridGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.GridGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GridGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.GridGV.ThemeStyle.RowsStyle.Height = 22;
+            this.GridGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.GridGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
-            this.ClientSize = new System.Drawing.Size(786, 427);
+            this.ClientSize = new System.Drawing.Size(835, 441);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "mainForm";
@@ -395,13 +454,13 @@
 
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton4;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton3;
-        private System.Windows.Forms.ComboBox cmBoxSorttype;
-        private System.Windows.Forms.ComboBox cmBoxsortBy;
-        private System.Windows.Forms.ComboBox cmBoxLoadFiles;
         private ComponentFactory.Krypton.Toolkit.KryptonButton kryptonButton2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private ComponentFactory.Krypton.Toolkit.KryptonPalette kryptonPalette1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmBoxLoadFiles;
+        private Guna.UI2.WinForms.Guna2ComboBox cmBoxSorttype;
+        private Guna.UI2.WinForms.Guna2ComboBox cmBoxsortBy;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridView GridGV;
+        private Guna.UI2.WinForms.Guna2DataGridView GridGV;
     }
 }
