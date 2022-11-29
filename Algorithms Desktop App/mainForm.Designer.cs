@@ -38,9 +38,9 @@
             this.kryptonButton2 = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cmBoxLoadFiles = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.cmBoxSorttype = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmBoxsortBy = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.kryptonPalette1 = new ComponentFactory.Krypton.Toolkit.KryptonPalette(this.components);
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.GridGV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
@@ -281,6 +281,46 @@
             this.cmBoxLoadFiles.Size = new System.Drawing.Size(143, 31);
             this.cmBoxLoadFiles.TabIndex = 13;
             // 
+            // cmBoxSorttype
+            // 
+            this.cmBoxSorttype.BackColor = System.Drawing.Color.Transparent;
+            this.cmBoxSorttype.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.cmBoxSorttype.BorderRadius = 14;
+            this.cmBoxSorttype.BorderThickness = 2;
+            this.cmBoxSorttype.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmBoxSorttype.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmBoxSorttype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmBoxSorttype.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxSorttype.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxSorttype.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmBoxSorttype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmBoxSorttype.ItemHeight = 25;
+            this.cmBoxSorttype.Location = new System.Drawing.Point(252, 3);
+            this.cmBoxSorttype.Name = "cmBoxSorttype";
+            this.cmBoxSorttype.Size = new System.Drawing.Size(150, 31);
+            this.cmBoxSorttype.TabIndex = 14;
+            this.cmBoxSorttype.SelectedIndexChanged += new System.EventHandler(this.cmBoxSorttype_SelectedIndexChanged);
+            // 
+            // cmBoxsortBy
+            // 
+            this.cmBoxsortBy.BackColor = System.Drawing.Color.Transparent;
+            this.cmBoxsortBy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
+            this.cmBoxsortBy.BorderRadius = 14;
+            this.cmBoxsortBy.BorderThickness = 2;
+            this.cmBoxsortBy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmBoxsortBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmBoxsortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmBoxsortBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxsortBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmBoxsortBy.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmBoxsortBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmBoxsortBy.ItemHeight = 25;
+            this.cmBoxsortBy.ItemsAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmBoxsortBy.Location = new System.Drawing.Point(408, 3);
+            this.cmBoxsortBy.Name = "cmBoxsortBy";
+            this.cmBoxsortBy.Size = new System.Drawing.Size(135, 31);
+            this.cmBoxsortBy.TabIndex = 15;
+            // 
             // kryptonPalette1
             // 
             this.kryptonPalette1.BasePaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Global;
@@ -323,46 +363,6 @@
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(252)))), ((int)(((byte)(252)))));
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.ButtonEdgeInset = 10;
             this.kryptonPalette1.HeaderStyles.HeaderForm.StateCommon.Content.Padding = new System.Windows.Forms.Padding(10, -1, -1, -1);
-            // 
-            // cmBoxSorttype
-            // 
-            this.cmBoxSorttype.BackColor = System.Drawing.Color.Transparent;
-            this.cmBoxSorttype.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.cmBoxSorttype.BorderRadius = 14;
-            this.cmBoxSorttype.BorderThickness = 2;
-            this.cmBoxSorttype.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmBoxSorttype.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmBoxSorttype.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmBoxSorttype.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmBoxSorttype.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmBoxSorttype.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmBoxSorttype.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmBoxSorttype.ItemHeight = 25;
-            this.cmBoxSorttype.Location = new System.Drawing.Point(252, 3);
-            this.cmBoxSorttype.Name = "cmBoxSorttype";
-            this.cmBoxSorttype.Size = new System.Drawing.Size(150, 31);
-            this.cmBoxSorttype.TabIndex = 14;
-            this.cmBoxSorttype.SelectedIndexChanged += new System.EventHandler(this.cmBoxSorttype_SelectedIndexChanged);
-            // 
-            // cmBoxsortBy
-            // 
-            this.cmBoxsortBy.BackColor = System.Drawing.Color.Transparent;
-            this.cmBoxsortBy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(142)))), ((int)(((byte)(254)))));
-            this.cmBoxsortBy.BorderRadius = 14;
-            this.cmBoxsortBy.BorderThickness = 2;
-            this.cmBoxsortBy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmBoxsortBy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmBoxsortBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmBoxsortBy.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmBoxsortBy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmBoxsortBy.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmBoxsortBy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmBoxsortBy.ItemHeight = 25;
-            this.cmBoxsortBy.ItemsAppearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmBoxsortBy.Location = new System.Drawing.Point(408, 3);
-            this.cmBoxsortBy.Name = "cmBoxsortBy";
-            this.cmBoxsortBy.Size = new System.Drawing.Size(135, 31);
-            this.cmBoxsortBy.TabIndex = 15;
             // 
             // tableLayoutPanel2
             // 
